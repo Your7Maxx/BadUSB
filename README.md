@@ -15,7 +15,6 @@ Before you start testing, check the Vendor ID and Product ID of your hid device 
 int('2341', 16) = 9025  //vendorID
 int('8036', 16) = 32822 //productID
 ```
-
 ### hid device keycode input monitor
 ```
 ./keycode.py
