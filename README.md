@@ -17,4 +17,4 @@ Before you start testing, check the Vendor ID and Product ID of your hid device 
 ```
 ./keycode.py
 ```
-
+![Image text](https://github.com/Your7Maxx/BadUSB/blob/main/keycode.png?raw=true)
