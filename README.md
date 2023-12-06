@@ -10,10 +10,13 @@ Before you start testing, check the Vendor ID and Product ID of your hid device 
 ```
 ./detect.py
 ```
-
 ![Image text](https://github.com/Your7Maxx/BadUSB/blob/main/hidregister.png?raw=true)
-### hid device keycode input monitor
+```
+int('2341', 16) = 9025  //vendorID
+int('8036', 16) = 32822 //productID
+```
 
+### hid device keycode input monitor
 ```
 ./keycode.py
 ```
