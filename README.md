@@ -10,6 +10,8 @@ Before you start testing, check the Vendor ID and Product ID of your hid device 
 ```
 ./detect.py
 ```
+
+![Image text](https://github.com/Your7Maxx/BadUSB/blob/main/hidregister.png?raw=true)
 ### hid device keycode input monitor
 
 ```
