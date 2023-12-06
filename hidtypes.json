@@ -1,0 +1,12 @@
+{
+  "0": "Keyboard",
+  "1": "Mouse",
+  "2": "Gamepad/Joystick",
+  "3": "Digitizer Pen",
+  "4": "Touch Screen",
+  "5": "Scanner",
+  "6": "Camera",
+  "0xd": "Temperature Sensor",
+  "0x12": "Optical Sensor"
+}
+
