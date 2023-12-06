@@ -1,7 +1,10 @@
 # BadUSB
-Detecting and blocking demo in badusb scenario.
+Detecting and blocking demo in badusb scenario based on KRSI.
 
 ## Introduce
+Before you start testing, Make sure your system has bcc and its environment installed.
+
+
 Before you start testing, check the Vendor ID and Product ID of your hid device and update them in the corresponding fields in the `rule.json` file. This file holds the whitelist of all hid devices, and the rule action is allow registration. Second, the `hidtypes.json` configuration file stores the correspondence between the type code of the hid device event and the actual device type. The `keycode.json` configuration file stores the mapping between keycode codes and actual user input.
 
 ## Useage
