@@ -3,6 +3,8 @@
 import json
 from bcc import BPF
 
+dict = {}
+
 class KeycodeMonitor:
 
     def __init__(self, src_file='keycode.c', keycode_file='keycode.json', hidtype_file='hidtypes.json'):
@@ -15,15 +17,27 @@ class KeycodeMonitor:
 
         with open(hidtype_file, 'r') as file2:
             self.hidtypes = json.load(file2)
+        self.key_output_status = {}
 
     def print_event(self, cpu, data, size):
         try:
             event = self.b["events"].event(data)
             code = self.keycode.get(str(event.code), 'Unknown')
             hidtype = self.hidtypes.get(str(event.type), 'Unknown')
-            print("[*] Vendor:%d, Product:%d, Type:%s, Code:%s" % (event.vendor, event.product, hidtype, code))
-        except :
-            pass
+            key_identifier = (event.type, event.code, event.value)
+
+            if event.code not in [29, 42, 56, 125, 97, 54, 100, 126]:
+                if self.key_output_status.get(key_identifier, False):
+                    self.key_output_status.clear()
+                    return
+
+                else:
+                    print("[*] Vendor:%d, Product:%d, Type:%d, Code:%s" % (event.vendor, event.product, event.type, code))
+                    self.key_output_status[key_identifier] = True
+
+
+        except Exception as e:
+            print(f"Error processing event: {e}")
 
     def start_monitoring(self):
         print("[*] start monitoring keycode input.")
